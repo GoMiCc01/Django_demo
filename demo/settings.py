@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app_blog',
 ]
 
 MIDDLEWARE = [
@@ -74,10 +75,15 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',  # Замість sqlite3
+        'NAME': 'mysite_db',                   # Назва бази даних
+        'USER': 'mysite_usr',                  # Користувач
+        'PASSWORD': 'mysite_pass',             # Пароль
+        'HOST': 'localhost',                   # Сервер бази даних
+        'PORT': '3306',                        # Порт, зазвичай 3306 для MySQL
     }
 }
+
 
 
 # Password validation
